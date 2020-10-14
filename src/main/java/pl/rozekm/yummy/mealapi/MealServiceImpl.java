@@ -7,19 +7,22 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MealServiceImpl implements MealService {
+class MealServiceImpl implements MealService {
 
     private final RestTemplate restTemplate;
 
-    public MealServiceImpl(RestTemplate restTemplate) {
+    private final UrlService urlService;
+
+    public MealServiceImpl(RestTemplate restTemplate, UrlService urlService) {
         this.restTemplate = restTemplate;
+        this.urlService = urlService;
     }
 
     @Override
     public List<CategoryApiDto> getCategories() {
 
         CategoryListApiDto response = restTemplate.getForObject(
-                "https://www.themealdb.com/api/json/v1/1/categories.php",
+                urlService.createGetCategoriesUrl(),
                 CategoryListApiDto.class);
 
         return Optional.ofNullable(response)
@@ -31,7 +34,7 @@ public class MealServiceImpl implements MealService {
     public List<MealApiDto> getByCategory(String category) {
 
         MealListApiDto response = restTemplate.getForObject(
-                "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + category,
+                urlService.createGetByCategoryUrl(category),
                 MealListApiDto.class);
 
         return Optional.ofNullable(response)
