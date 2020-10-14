@@ -13,17 +13,18 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GetCategoriesTest {
+public class GetByCategoryTest {
+
+    private static final String CATEGORY = "Seafood";
 
     @Autowired
     private MealService mealService;
 
     @Test
-    public void shouldGetCategories(){
-        List<CategoryApiDto> categories = mealService.getCategories();
+    public void shouldGetByCategory() {
+        List<MealApiDto> categories = mealService.getByCategory(CATEGORY);
 
         assertNotNull(categories);
         assertFalse(categories.isEmpty());
     }
-
 }
