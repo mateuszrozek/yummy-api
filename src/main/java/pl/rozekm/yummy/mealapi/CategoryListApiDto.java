@@ -1,17 +1,18 @@
-package pl.rozekm.yummy.domain;
+package pl.rozekm.yummy.mealapi;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MealApiDto {
+class CategoryListApiDto {
 
-    private String strMeal;
-    private String strMealThumb;
-    private String idMeal;
+    private List<CategoryApiDto> categories;
+
 }

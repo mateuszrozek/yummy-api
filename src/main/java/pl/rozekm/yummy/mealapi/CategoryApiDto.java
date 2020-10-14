@@ -1,4 +1,4 @@
-package pl.rozekm.yummy.domain;
+package pl.rozekm.yummy.mealapi;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryApiDto {
+class CategoryApiDto {
 
     private String idCategory;
     private String strCategory;

@@ -1,4 +1,4 @@
-package pl.rozekm.yummy.domain;
+package pl.rozekm.yummy.mealapi;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,8 +11,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryListApiDto {
+class MealListApiDto {
 
-    private List<CategoryApiDto> categories;
-
+    private List<MealApiDto> meals;
 }

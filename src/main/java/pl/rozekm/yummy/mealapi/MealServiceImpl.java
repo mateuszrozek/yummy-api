@@ -1,4 +1,4 @@
-package pl.rozekm.yummy.domain;
+package pl.rozekm.yummy.mealapi;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
